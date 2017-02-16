@@ -184,3 +184,30 @@ private void startAudioWithVibrator() {
 # 演示界面
 ![演示界面](./doc/mainUI.png)
 
+#  修订 2017-02-16
+
+  >MediaPlayer主要用于播放比较长的音视频，短音频采用SoundPool
+  >更好，这样节省资源且延时少。
+
+```java
+ private void startAudioWithVibrator2() {
+        if (mSoundPool == null) {
+            mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+            mSoundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+                @Override
+                public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                    mSoundPool.play(mSoundId, 0.5f, 0.5f, 0, 0, 1.0f);
+                }
+            });
+
+            mSoundId = mSoundPool.load(this, R.raw.entervoice, 1);
+        } else {
+            mSoundPool.play(mSoundId, 0.5f, 0.5f, 0, 0, 1.0f);
+        }
+
+        mTxtCount.setText(String.format("今天还剩下%d次", --sShakeCount));
+        startVibrator();
+
+ }
+```
+
