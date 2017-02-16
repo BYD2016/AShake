@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    tools:context="codepath.com.cn.ashake.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_main_handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:srcCompat="@drawable/shake_handle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/iv_main_a"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/a_bg"
+        android:scaleType="fitCenter"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:layout_alignTop="@+id/iv_main_handle"
+        android:layout_alignLeft="@+id/iv_main_handle"
+        android:layout_alignStart="@+id/iv_main_handle"
+        android:layout_marginTop="96dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_main_net_shake_count"
+        android:text="今天还剩下3次"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/iv_main_a"
+        android:layout_alignStart="@+id/iv_main_a"
+        android:padding="4pt"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/white"
+        android:background="@drawable/tv_main_net_shake_count_bk"
+        />
+</RelativeLayout>
